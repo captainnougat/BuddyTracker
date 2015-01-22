@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.wifi.WifiManager;
+import android.net.wifi.p2p.WifiP2pManager;
 
 public class WifiStateChangedReceiver extends BroadcastReceiver {
 
@@ -17,6 +18,17 @@ public class WifiStateChangedReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+
+        String action = intent.getAction();
+        if(WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION.equals(action)){
+            int state = intent.getIntExtra(WifiP2pManager.EXTRA_WIFI_STATE, -1);
+            if(state == WifiP2pManager.WIFI_P2P_STATE_ENABLED){
+                // P2P enabled
+            } else{
+                // P2P disabled
+            }
+        }
+
         //WLAN Statusänderungen sollen nur weitergereicht werden, wenn ConnectActivity sichtbar ist
         if (ConnectActivity.active) {
             //Empfangener Intent enthält Wifistatus --> herausholen mit getIntExtra()
@@ -32,5 +44,6 @@ public class WifiStateChangedReceiver extends BroadcastReceiver {
                 context.sendBroadcast(new Intent(INTENT_FILTER_SHOW_ALERTDIALOG));
             }
         }
+
     }
 }

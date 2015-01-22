@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Bereza\AndroidStudioProjects\BuddyTracker\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="C:\Users\Bereza\AndroidStudioProjects\BuddyTracker\app\build\intermediates\pre-dexed\debug\classes-7334ace2dfef97bba5f680fae9e7942b09462274.jar" />
-    </item>
-    <item
-        jar="C:\Program Files\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="C:\Users\Bereza\AndroidStudioProjects\BuddyTracker\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-80cc5eb0c41746e4fbb315aad6b444e26923863d.jar" />
-    </item>
-    <item
-        jar="C:\Users\Bereza\AndroidStudioProjects\BuddyTracker\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jar="C:\Users\Tobias\AndroidStudioProjects\BuddyTracker\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="C:\Users\Bereza\AndroidStudioProjects\BuddyTracker\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-c6344539c397dda1478a9fbca320f6e9d6007fea.jar" />
+        <dex dex="C:\Users\Tobias\AndroidStudioProjects\BuddyTracker\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-a8b5914972709e8ef7ade40f4b0eea875a50cea9.jar" />
     </item>
     <item
-        jar="C:\Users\Bereza\AndroidStudioProjects\BuddyTracker\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jar="C:\Users\Tobias\AndroidStudioProjects\BuddyTracker\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\Users\Tobias\AndroidStudioProjects\BuddyTracker\app\build\intermediates\pre-dexed\debug\classes-5de61f5787d1b54e4cf8cf5d185af59ddac0e873.jar" />
+    </item>
+    <item
+        jar="C:\Users\Tobias\AppData\Local\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="C:\Users\Tobias\AndroidStudioProjects\BuddyTracker\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-0f44b89f1037d3a50d0a0e1cea88b49fa3e7376d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Tobias\AndroidStudioProjects\BuddyTracker\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="C:\Users\Bereza\AndroidStudioProjects\BuddyTracker\app\build\intermediates\pre-dexed\debug\classes-fc1768b52aa9da4d63a9a55bc2155e7904be8825.jar" />
+        <dex dex="C:\Users\Tobias\AndroidStudioProjects\BuddyTracker\app\build\intermediates\pre-dexed\debug\classes-51236364c230f3bd7f300dec03f9f2ead816923b.jar" />
     </item>
 
 </items>

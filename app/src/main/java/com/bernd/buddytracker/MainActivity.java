@@ -17,11 +17,27 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btn_start = (Button) findViewById(R.id.btn_connect);
-        btn_start.setOnClickListener(new View.OnClickListener() {
+        Button btn_connect = (Button) findViewById(R.id.btn_connect);
+        btn_connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,ConnectActivity.class));
+            }
+        });
+
+        Button btn_check = (Button) findViewById(R.id.btn_check);
+        btn_check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,CheckStatusActivity.class));
+            }
+        });
+
+        Button btn_profile = (Button) findViewById(R.id.btn_profile);
+        btn_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,ProfileSettingsActivity.class));
             }
         });
     }

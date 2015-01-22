@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Buddy Tracker</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_connect">ConnectActivity</string>
-
+    <string name="app_name">BuddyTracker</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="title_activity_connect">Mit Buddies verbinden</string>
     --Button Beschriftungen
-    <string name="btn_start">Start</string>
-    <string name="btn_connect">Buddy verbinden</string>
-    <string name="btn_settings">Einstellungen</string>
+    <string name="btn_check">Buddystatus überprüfen</string>
+    <string name="btn_connect">Mit Buddies verbinden</string>
+    <string name="btn_settings">Profil bearbeiten</string>
     <string name="btn_scan">Scan</string>
-
+    <string name="btn_cancel">Abbrechen</string>
+    <string name="btn_save">Speichern</string>
+    <string name="edit_name">Name</string>
+    <string name="title_activity_profile_settings">Profil bearbeiten</string>
+    <string name="title_activity_check_status">Buddystatus überprüfen</string>
 
 </resources>

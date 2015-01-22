@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.wifi.WifiManager;
+import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.ActionBarActivity;
@@ -17,6 +18,12 @@ public class ConnectActivity extends ActionBarActivity {
     //FALSE, wenn Activity nicht sichtbar, TRUE wenn Activity läuft
     public static boolean active = false;
     private AlertDialog wifiAlertDialog;
+
+    WifiP2pManager mManager;
+    WifiP2pManager.Channel mChannel;
+    BroadcastReceiver mReceiver;
+
+    IntentFilter wifiStateFilter, wifiDirectFilter;
 
     //empfängt Ereignisse, wenn WLAN State sich ändert. Intent enthält Aufforderung Alertdialog zu zeigen oder zu verstecken
     BroadcastReceiver wifiStateReceiver = new BroadcastReceiver() {
@@ -46,12 +53,22 @@ public class ConnectActivity extends ActionBarActivity {
         wifiAlertDialog = createWifiAlertDialog();
 
         //dynamischen Intentfilter bauen
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(WifiStateChangedReceiver.INTENT_FILTER_SHOW_ALERTDIALOG);
-        filter.addAction(WifiStateChangedReceiver.INTENT_FILTER_DISMISS_ALERTDIALOG);
+        wifiStateFilter = new IntentFilter();
+        wifiStateFilter.addAction(WifiStateChangedReceiver.INTENT_FILTER_SHOW_ALERTDIALOG);
+        wifiStateFilter.addAction(WifiStateChangedReceiver.INTENT_FILTER_DISMISS_ALERTDIALOG);
 
         //receiver mit gebautem Filter dynamisch registrieren
-        registerReceiver(wifiStateReceiver, filter);
+        registerReceiver(wifiStateReceiver, wifiStateFilter);
+
+        mManager = (WifiP2pManager) getSystemService(Context.WIFI_P2P_SERVICE);
+        mChannel = mManager.initialize(this, getMainLooper(), null);
+        mReceiver = new WifiDirectBroadcastReceiver(mManager, mChannel, this);
+
+        wifiDirectFilter = new IntentFilter();
+        wifiDirectFilter.addAction(WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION);
+        wifiDirectFilter.addAction(WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION);
+        wifiDirectFilter.addAction(WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION);
+        wifiDirectFilter.addAction(WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION);
     }
 
     @Override
@@ -60,12 +77,13 @@ public class ConnectActivity extends ActionBarActivity {
     }
 
     @Override
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
         active = true;
         //WLAN aus, also Alertdialog zeigen
-        if(!wifiIsEnabled(this))
+        if (!wifiIsEnabled(this))
             wifiAlertDialog.show();
+        registerReceiver(mReceiver, wifiDirectFilter);
     }
 
     @Override
@@ -73,6 +91,7 @@ public class ConnectActivity extends ActionBarActivity {
         super.onPause();
         //TODO active = false in onResume reicht, oder?
         active = false;
+        unregisterReceiver(mReceiver);
     }
 
     @Override
@@ -95,7 +114,7 @@ public class ConnectActivity extends ActionBarActivity {
      *
      * @return liefert den fertigen Alertdialog zurück
      */
-    private AlertDialog createWifiAlertDialog(){
+    private AlertDialog createWifiAlertDialog() {
         AlertDialog.Builder alertDiaBuilder = new AlertDialog.Builder(this);
 
         alertDiaBuilder.setTitle("Wifi muss eingeschaltet sein");
@@ -137,7 +156,7 @@ public class ConnectActivity extends ActionBarActivity {
      *
      * @return Boolean
      */
-    public boolean wifiIsEnabled(Context con){
+    public boolean wifiIsEnabled(Context con) {
         WifiManager wifiMgr = (WifiManager) con.getSystemService(Context.WIFI_SERVICE);
         int state = wifiMgr.getWifiState();
 
