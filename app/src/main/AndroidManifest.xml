@@ -29,15 +29,6 @@
             android:label="@string/title_activity_connect" >
         </activity>
 
-        <!-- Receive Wi-Fi connection state changes -->
-        <receiver
-            android:name=".WifiStateChangedReceiver"
-            android:enabled="true" >
-            <intent-filter>
-                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
-            </intent-filter>
-        </receiver>
-
         <activity
             android:name=".CheckStatusActivity"
             android:label="@string/title_activity_check_status"
