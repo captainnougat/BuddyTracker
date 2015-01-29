@@ -8,11 +8,22 @@
     <string name="btn_check">Buddystatus überprüfen</string>
     <string name="btn_connect">Mit Buddies verbinden</string>
     <string name="btn_settings">Profil bearbeiten</string>
-    <string name="btn_scan">Scan</string>
+    <string name="btn_scan">Erneut Scannen</string>
     <string name="btn_cancel">Abbrechen</string>
     <string name="btn_save">Speichern</string>
     <string name="edit_name">Name</string>
     <string name="title_activity_profile_settings">Profil bearbeiten</string>
     <string name="title_activity_check_status">Buddystatus überprüfen</string>
+    <string name="wdirect_activation">WLAN DIRECT wird aktiviert!</string>
+    <string name="loading">loading</string>
+    <string name="searchPeers">Suche nach Geräten</string>
+    <string name="stopDiscovery">Suche abgebrochen. Neuer Scan um Suche zu beginnen.</string>
+    <string name="scanFailed">Scan fehlgeschlagen</string>
+    <string name="goToSettings">In Einstellungen wechseln?</string>
+    <string name="no">Nein</string>
+    <string name="yes">Ja</string>
+    <string name="wlanOn">Wlan muss eingeschaltet sein!</string>
+    <string name="nameSaved">Name gespeichert</string>
+    <string name="sorry">Tut uns leid, es ist etwas schiefgelaufen...</string>
 
 </resources>

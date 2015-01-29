@@ -1,18 +1,23 @@
 package com.bernd.buddytracker;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class CheckStatusActivity extends ActionBarActivity {
+public class CheckStatusActivity extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_status);
+        getListView().setAdapter(new ConnectedBuddyAdapter(this));
+
+        //TODO broadcastreceiver für buddy list changed
     }
+
+
 
 
     @Override

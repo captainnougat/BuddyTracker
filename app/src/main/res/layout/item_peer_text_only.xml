@@ -3,15 +3,29 @@
     android:orientation="horizontal" android:layout_width="fill_parent"
     android:layout_height="?android:attr/listPreferredItemHeight">
 
-    <TextView
-        android:id="@+id/item_peer_name"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:paddingTop="4dip"
-        android:layout_weight="0.6"
-        android:textStyle="bold"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_weight="0.6">
+
+        <TextView
+            android:id="@+id/item_peer_nickname"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dip"
+            android:layout_weight="0.6"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <TextView
+            android:id="@+id/item_peer_phonename"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dip"
+            android:layout_weight="0.6"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +41,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         <TextView
-            android:id="@+id/item_peer_type"
+            android:id="@+id/item_peer_status"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:paddingTop="4dip"
